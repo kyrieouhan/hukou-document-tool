@@ -4,6 +4,12 @@
 
 按目录读取扫描 PDF，一份 PDF 对应一户。程序在本机校正页面方向、定位户口簿版面、识别字段，并生成 Excel 汇总和复核清单。原始 PDF 保持不变。
 
+## 下载 Windows 便携版
+
+**[下载 v1.2.0 Windows x64 ZIP](https://github.com/kyrieouhan/hukou-document-tool/releases/download/v1.2.0/HukouTool-1.2.0-Windows-x64.zip)** · [发布说明与 SHA-256](https://github.com/kyrieouhan/hukou-document-tool/releases/tag/v1.2.0)
+
+完整解压后，打开 `HukouTool` 文件夹，双击 `HukouTool.exe`。保留同级的 `_internal` 文件夹。包内自带运行库和 OCR 模型，解压后无需安装 Python。
+
 ![户口资料批量整理工具 1.2.0，未加载文件的真实界面](docs/screenshots/app.png)
 
 ## 功能
@@ -13,7 +19,7 @@
 - **导出** · 生成「家庭成员汇总」「待复核」「处理日志」三张表，保留长编号和前导零。按所选命名方式生成 PDF 副本。
 - **批处理** · 可配置并发，支持暂停、继续、停止以及从检查点恢复。提供 PySide6 图形界面和 CLI。
 
-## Windows 上运行
+## 从源码运行
 
 安装 Python 3.12。在仓库根目录运行以下 PowerShell 命令。
 
@@ -48,3 +54,7 @@ py -3.12 -m venv .venv
 | 图形界面与输出 | PySide6、openpyxl、PyInstaller |
 
 测试使用独立的临时文件和合成字段，覆盖校验、Excel 导出、原件保护以及中断恢复。识别效果取决于扫描质量和版式，结果需要人工复核。模型来自 [RapidOCR 模型仓库](https://modelscope.cn/models/RapidAI/RapidOCR)，许可与来源见 [第三方组件说明](docs/third-party.md)。
+
+## 许可
+
+源码按 [AGPL-3.0](LICENSE) 发布。便携包相关的 [第三方许可与对应源码](docs/windows-release-notices.md)。
